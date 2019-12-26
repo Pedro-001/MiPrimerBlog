@@ -30,6 +30,9 @@ ALLOWED_HOSTS = ['sdm001.pythonanywhere.com',]
 
 # Application definition
 STATIC_URL = '/static/' # the path in url
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
