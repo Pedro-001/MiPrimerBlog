@@ -25,10 +25,11 @@ SECRET_KEY = 'v0g5^bm@x@@vv6=ez%-84)v^@8-^!1asd3@o3y!zh%0jga#f4e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sdm001.pythonanywhere.com']
+ALLOWED_HOSTS = ['sdm001.pythonanywhere.com', 'localhost','127.0.0.1:8000', '127.0.0.1',]
 
 
 # Application definition
+STATIC_URL = '/static/' # the path in url
 
 INSTALLED_APPS = [
     'django.contrib.admin',

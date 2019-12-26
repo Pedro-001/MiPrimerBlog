@@ -1,23 +1,36 @@
+{% load static %}
 <html>
-    <head>
-        <title>Home</title>
-    </head>
-<body>
-    <div>
-        <h1>Pagina personal</h1>
-    </div>
-    <div>
-        <p>Hola, Bienvenidos a mi primer prueba</p>
-       <p>It works!</p>
-    </div>
+        <head>
+            <title>Home</title>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+        </head>
+    <body>
     
-    <div>
-        <h2>Mi primer post</h2>
-        <p> publicado: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+        <div class = "page-header"> 
+            <h1><a href="/">Pagina personal</a></h1>
+        </div>
+    
+       
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <div class = "post">
+                            <h2>Mi primer post</h2>
+                            <div class="date">
+                                <p> publicado: {{ post.published_date }}</p>
+                            </div>
+                            <h2><a href="">{{ post.title }}</a></h2>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
 
-
-</body>
+                     {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
